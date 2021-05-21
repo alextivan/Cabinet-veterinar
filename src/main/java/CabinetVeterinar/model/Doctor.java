@@ -13,7 +13,8 @@ public class Doctor {
     @Column(name = "specialization")
     private String specialization;
 
-    @OneToOne(mappedBy = "doctor") // doctor este numele fieldului din Person
+    @OneToOne
+    @JoinColumn(name = "person_id") //doctor id este din baza de date /
     private Person person;
 
     public Doctor(String specialization) {
@@ -39,11 +40,20 @@ public class Doctor {
         this.specialization = specialization;
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
     @Override
     public String toString() {
         return "Doctor{" +
                 "doctorId=" + doctorId +
                 ", specialization='" + specialization + '\'' +
+                ", person=" + person +
                 '}';
     }
 }

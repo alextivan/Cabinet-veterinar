@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column( name = "person_id")
-    private Integer personId;
+    @Column( name = "id")
+    private Integer id;
     @Column( name = "email")
     private String email;
     @Column(name = "user_name")
@@ -18,8 +18,8 @@ public class Person {
     @Column(name = "password")
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "doctor_id") //doctor id este din baza de date
+
+    @OneToOne(mappedBy = "person") // person este numele fieldului din Doctor
     private Doctor doctor;
 
     public Person( String email, String userName, String phoneNumber, String password) {
@@ -34,11 +34,11 @@ public class Person {
     }
 
     public Integer getPersonId() {
-        return personId;
+        return id;
     }
 
     public void setPersonId(Integer personId) {
-        this.personId = personId;
+        this.id = id;
     }
 
     public String getEmail() {
@@ -73,14 +73,23 @@ public class Person {
         this.password = password;
     }
 
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-                "personId=" + personId +
+                "personId=" + id +
                 ", email='" + email + '\'' +
                 ", userName='" + userName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", password='" + password + '\'' +
+                ", doctor=" + doctor +
                 '}';
     }
 }

@@ -8,35 +8,30 @@ public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column(name = "id")
-    private Integer id;
-
-    @Column(name = "id_person")
-    private Integer idPerson;
+    @Column(name = "owner_id")
+    private Integer ownerId;
 
     @Column(name = "address")
     private String address;
 
-    @OneToOne(mappedBy = "owner") // person este numele fieldului din Doctor
-    private Doctor doctor;
+    @OneToOne
+    @JoinColumn(name = "person_id") //doctor id este din baza de date /
+    private Person person;
 
-    public Owner(Integer idPerson, String address) {
-
-        this.idPerson = idPerson;
+    public Owner( String address, Person person) {
         this.address = address;
+        this.person = person;
     }
 
     public Owner() {
-
     }
 
-    public Integer getIdPerson() {
-        return idPerson;
+    public Integer getOwnerId() {
+        return ownerId;
     }
 
-    public void setIdPerson(Integer idPerson) {
-        this.idPerson = idPerson;
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
     }
 
     public String getAddress() {
@@ -47,12 +42,20 @@ public class Owner {
         this.address = address;
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
 
     @Override
     public String toString() {
         return "Owner{" +
-                "idPerson" + idPerson +
+                "ownerId=" + ownerId +
+                ", address='" + address + '\'' +
+                ", person=" + person +
                 '}';
-
     }
 }

@@ -1,6 +1,7 @@
 package CabinetVeterinar.repository;
 
 import CabinetVeterinar.model.Doctor;
+import CabinetVeterinar.model.Owner;
 import CabinetVeterinar.model.Person;
 import CabinetVeterinar.utils.SessionManager;
 import org.hibernate.Session;
@@ -20,12 +21,23 @@ public class PersonRepository {
         return person;
     }
 
-    public void save(Person person, Doctor doctor) {
+    public void saveDoctor(Person person, Doctor doctor) {
         Session session = SessionManager.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
         session.save(doctor);//adaugam doctor in baza de date
         doctor.setPerson(person);//setam accountul pe doctor
+        session.save(person);//am adaugat person in baza de date si se genereaza in ID pt person
+        transaction.commit();
+        session.close();
+    }
+
+    public void saveOwner(Person person, Owner owner) {
+        Session session = SessionManager.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.save(owner);//adaugam owner in baza de date
+        owner.setPerson(person); //setam accountul pe owner
         session.save(person);//am adaugat person in baza de date si se genereaza in ID pt person
         transaction.commit();
         session.close();

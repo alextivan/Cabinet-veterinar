@@ -22,6 +22,9 @@ public class Person {
     @OneToOne(mappedBy = "person") // person este numele fieldului din Doctor
     private Doctor doctor;
 
+    @OneToOne(mappedBy = "person") // person este numele fieldului din Doctor
+    private Owner owner;
+
     public Person( String email, String userName, String phoneNumber, String password) {
 
         this.email = email;

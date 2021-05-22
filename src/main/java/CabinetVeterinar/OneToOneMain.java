@@ -1,9 +1,9 @@
 package CabinetVeterinar;
 
 import CabinetVeterinar.model.Doctor;
+import CabinetVeterinar.model.Owner;
 import CabinetVeterinar.model.Person;
 import CabinetVeterinar.repository.PersonRepository;
-import CabinetVeterinar.utils.SessionManager;
 
 public class OneToOneMain {
 
@@ -25,16 +25,16 @@ public class OneToOneMain {
 
         Doctor doctor1 = new Doctor();
         doctor1.setSpecialization("ORL");
-        Doctor doctor2 = new Doctor();
-        doctor2.setSpecialization("Pediatru");
+        Owner owner1 = new Owner();
+        owner1.setAddress("Bdul Victoriei Pana mea");
 
         PersonRepository personRepository = new PersonRepository();
-        personRepository.save(person1, doctor1);
-        personRepository.save(person2, doctor2);
+        personRepository.saveDoctor(person1, doctor1);
+       personRepository.saveOwner(person2, owner1);
 
     //   System.out.println(personRepository.findById(1));
         //System.out.println(personRepository.findById(2));
 
-        // SessionManager.shutDown();
+       // SessionManager.shutDown();
     }
 }

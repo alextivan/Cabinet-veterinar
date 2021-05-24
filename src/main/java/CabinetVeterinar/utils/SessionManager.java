@@ -29,12 +29,12 @@ public class SessionManager extends AbstractSessionManager
     protected void setAnnotatedClasses(Configuration configuration)
     {
 
-      //  configuration.addAnnotatedClass(Animal.class);
-     //   configuration.addAnnotatedClass(Consultation.class);
+       configuration.addAnnotatedClass(Animal.class);
+        configuration.addAnnotatedClass(Consultation.class);
         configuration.addAnnotatedClass(Doctor.class);
         configuration.addAnnotatedClass(Owner.class);
         configuration.addAnnotatedClass(Person.class);
-     //   configuration.addAnnotatedClass(Treatment.class);
+        configuration.addAnnotatedClass(Treatment.class);
 
 
     }

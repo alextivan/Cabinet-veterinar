@@ -1,6 +1,7 @@
 package CabinetVeterinar.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "owners")
@@ -17,6 +18,10 @@ public class Owner {
     @OneToOne
     @JoinColumn(name = "person_id") //owner id este din baza de date /
     private Person person;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Animal> animals;
+
 
     public Owner( String address, Person person) {
         this.address = address;

@@ -6,7 +6,7 @@ import CabinetVeterinar.model.Person;
 import CabinetVeterinar.repository.PersonRepository;
 import CabinetVeterinar.utils.SessionManager;
 
-public class OneToOneMain {
+public class Main {
 
     public static void main(String[] args) {
 

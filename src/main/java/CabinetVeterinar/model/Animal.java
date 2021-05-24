@@ -26,6 +26,11 @@ import java.util.List;
         @OneToMany(mappedBy = "animal")
         private List<Consultation> consultations;
 
+        @ManyToOne
+        @JoinColumn(name = "owner_id")
+        private Owner owner;
+
+
         public Animal(String nume, String specie, String rasa, String sex, String varsta ) {
 
             this.nume = nume ;
@@ -94,10 +99,15 @@ import java.util.List;
             this.varsta = varsta;
         }
 
+    public Owner getOwner() {
+        return owner;
+    }
 
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 
-
-        @Override
+    @Override
         public String toString() {
 
             return "Animals{" +

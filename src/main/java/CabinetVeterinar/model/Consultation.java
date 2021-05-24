@@ -27,6 +27,10 @@ public class Consultation {
     @JoinColumn(name = "animal_id")
     private Animal animal;
 
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
+
 
     public Consultation(Date date, double weight, float temperature, Integer consultationPrice) {
         this.date = date;

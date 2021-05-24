@@ -1,6 +1,7 @@
 package CabinetVeterinar.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "doctor")
@@ -16,6 +17,9 @@ public class Doctor {
     @OneToOne
     @JoinColumn(name = "person_id") //doctor id este din baza de date /
     private Person person;
+
+    @OneToMany(mappedBy = "doctor")
+    private List<Consultation> consultations;
 
     public Doctor(String specialization) {
         this.specialization = specialization;

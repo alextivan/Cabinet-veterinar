@@ -11,8 +11,8 @@ import javax.persistence.*;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column( name = "a_id")
         private Integer id;
-        @Column( name = "id_owner")
-        private int id_owner;
+//        @Column( name = "id_owner")
+//        private int id_owner;
         @Column(name = "nume")
         private String nume;
         @Column(name = "specie")
@@ -24,12 +24,14 @@ import javax.persistence.*;
         @Column(name = "varsta")
         private String varsta;
 
-        @OneToOne(mappedBy = "animals") // person este numele fieldului din Doctor
-        private Doctor doctor;
+//        @OneToOne(mappedBy = "animals") // person este numele fieldului din Doctor
+//        private Doctor doctor;
+
+
 
         public Animal( int id_owner, String nume, String specie, String rasa, String sex, String varsta ) {
 
-            this.id_owner = id_owner;
+//            this.id_owner = id_owner;
             this.nume = nume ;
             this.specie = specie;
             this.rasa = rasa;

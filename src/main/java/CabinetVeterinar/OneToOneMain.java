@@ -4,6 +4,7 @@ import CabinetVeterinar.model.Doctor;
 import CabinetVeterinar.model.Owner;
 import CabinetVeterinar.model.Person;
 import CabinetVeterinar.repository.PersonRepository;
+import CabinetVeterinar.utils.SessionManager;
 
 public class OneToOneMain {
 

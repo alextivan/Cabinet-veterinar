@@ -15,7 +15,7 @@ public class Owner {
     private String address;
 
     @OneToOne
-    @JoinColumn(name = "person_id") //doctor id este din baza de date /
+    @JoinColumn(name = "person_id") //owner id este din baza de date /
     private Person person;
 
     public Owner( String address, Person person) {

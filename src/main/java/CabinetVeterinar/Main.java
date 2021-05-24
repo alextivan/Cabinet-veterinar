@@ -31,11 +31,13 @@ public class Main {
 
         PersonRepository personRepository = new PersonRepository();
         personRepository.saveDoctor(person1, doctor1);
-       personRepository.saveOwner(person2, owner1);
+        personRepository.saveOwner(person2, owner1);
 
-    //   System.out.println(personRepository.findById(1));
+        //   System.out.println(personRepository.findById(1));
         //System.out.println(personRepository.findById(2));
 
-       // SessionManager.shutDown();
+        // SessionManager.shutDown();
+
+
     }
 }

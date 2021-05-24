@@ -52,6 +52,7 @@ public class Doctor {
         this.person = person;
     }
 
+
     @Override
     public String toString() {
         return "Doctor{" +
@@ -60,4 +61,6 @@ public class Doctor {
                 ", person=" + person +
                 '}';
     }
+
+    //Modificare
 }

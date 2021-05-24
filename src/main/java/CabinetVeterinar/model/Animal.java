@@ -1,15 +1,15 @@
 package CabinetVeterinar.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
-
-    @Entity
-    @Table(name = "animals")
+@Entity
+    @Table(name = "animal")
     public class Animal {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column( name = "a_id")
+        @Column( name = "animal_id")
         private Integer id;
 //        @Column( name = "id_owner")
 //        private int id_owner;
@@ -27,7 +27,8 @@ import javax.persistence.*;
 //        @OneToOne(mappedBy = "animals") // person este numele fieldului din Doctor
 //        private Doctor doctor;
 
-
+        @OneToMany(mappedBy = "animal")
+        private List<Consultation> consultations;
 
         public Animal( int id_owner, String nume, String specie, String rasa, String sex, String varsta ) {
 

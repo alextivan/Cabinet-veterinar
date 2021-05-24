@@ -3,7 +3,7 @@ package CabinetVeterinar.model;
 
 import javax.persistence.*;
 import java.util.Date;
-
+import java.util.List;
 
 
 @Entity
@@ -22,6 +22,11 @@ public class Consultation {
     private float temperature;
     @Column(name = "consultation_price")
     private Integer ConsultationPrice;
+
+    @ManyToOne
+    @JoinColumn(name = "animal_id")
+    private Animal animal;
+
 
     public Consultation(Date date, double weight, float temperature, Integer consultationPrice) {
         this.date = date;

@@ -78,6 +78,14 @@ public class Consultation {
         ConsultationPrice = consultationPrice;
     }
 
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
+
     @Override
     public String toString() {
         return "Consultation{" +

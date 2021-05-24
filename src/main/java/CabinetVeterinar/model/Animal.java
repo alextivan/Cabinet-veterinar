@@ -11,8 +11,6 @@ import java.util.List;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column( name = "animal_id")
         private Integer id;
-//        @Column( name = "id_owner")
-//        private int id_owner;
         @Column(name = "nume")
         private String nume;
         @Column(name = "specie")
@@ -24,15 +22,12 @@ import java.util.List;
         @Column(name = "varsta")
         private String varsta;
 
-//        @OneToOne(mappedBy = "animals") // person este numele fieldului din Doctor
-//        private Doctor doctor;
 
         @OneToMany(mappedBy = "animal")
         private List<Consultation> consultations;
 
-        public Animal( int id_owner, String nume, String specie, String rasa, String sex, String varsta ) {
+        public Animal(String nume, String specie, String rasa, String sex, String varsta ) {
 
-//            this.id_owner = id_owner;
             this.nume = nume ;
             this.specie = specie;
             this.rasa = rasa;
@@ -53,13 +48,7 @@ import java.util.List;
 
         /////////
 
-        public Integer getId_owner() {
-            return id_owner;
-        }
 
-        public void setId_owner(Integer email) {
-            this.id_owner = id_owner;
-        }
 
        /////////////////////////
 
@@ -113,7 +102,6 @@ import java.util.List;
 
             return "Animals{" +
                    "animalsId" + id +
-                    ", id_owner='" + id_owner + '\'' +
                     ", nume='" + nume + '\'' +
                     ", specie='" + specie + '\'' +
                     ", rasa='" + rasa + '\'' +

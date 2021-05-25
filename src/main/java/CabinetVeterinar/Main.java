@@ -30,8 +30,8 @@ public class Main {
         owner1.setAddress("Bdul Victoriei Pana mea");
 
         PersonRepository personRepository = new PersonRepository();
-        personRepository.saveDoctor(person1, doctor1);
-        personRepository.saveOwner(person2, owner1);
+        //personRepository.saveDoctor(person1, doctor1);
+        //personRepository.saveOwner(person2, owner1);
 
         //   System.out.println(personRepository.findById(1));
         //System.out.println(personRepository.findById(2));

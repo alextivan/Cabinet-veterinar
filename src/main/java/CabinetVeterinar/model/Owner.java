@@ -9,7 +9,7 @@ public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "owner_id")
+    @Column(name = "id_owner")
     private Integer ownerId;
 
     @Column(name = "address")

@@ -2,6 +2,8 @@ package CabinetVeterinar.model;
 
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "treatment")
@@ -15,6 +17,10 @@ public class Treatment {
     private String testName;
     @Column(name = "price")
     private Integer price;
+
+    @ManyToMany(mappedBy = "treatments")
+    private Set<Consultation> consultations = new HashSet<>();
+
 
     public Treatment(String testName, Integer price) {
         this.testName = testName;

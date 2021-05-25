@@ -43,32 +43,32 @@ public class PersonRepository {
         session.close();
     }
 
-    // public void delete(Employee employee){
-    //     Session session = SessionManager.getSessionFactory().openSession();
-    //     Transaction transaction = session.beginTransaction();
-    //     session.delete(employee);
-    //     transaction.commit();
-    //     session.close();
-    // }
+     public void delete(Person person){
+         Session session = SessionManager.getSessionFactory().openSession();
+         Transaction transaction = session.beginTransaction();
+         session.delete(person);
+         transaction.commit();
+         session.close();
+     }
 
-    // public void update(Employee employee){
-    //     Session session = SessionManager.getSessionFactory().openSession();
-    //     Transaction transaction = session.beginTransaction();
-    //     session.update(employee);
-    //     transaction.commit();
-    //     session.close();
-    // }
+     public void update(Person person){
+         Session session = SessionManager.getSessionFactory().openSession();
+         Transaction transaction = session.beginTransaction();
+         session.update(person);
+         transaction.commit();
+         session.close();
+     }
 
-    // public List<Employee> findAlEmployeesFromDepartment(String department){
-    //     Session session = SessionManager.getSessionFactory().openSession();
-    //     String hqlquery = "from Employee e  where e.department.name = :departmentName ";
-    //     Query<Employee> employeeQuery = session.createQuery(hqlquery);
-    //     employeeQuery.setParameter("departmentName",department);
-    //     List<Employee>employees = employeeQuery.list();
-    //     session.close();
-    //     return employees;
-    // }
-    //
+//     public List<Employee> findAlEmployeesFromDepartment(String department){
+//         Session session = SessionManager.getSessionFactory().openSession();
+//         String hqlquery = "from Employee e  where e.department.name = :departmentName ";
+//         Query<Employee> employeeQuery = session.createQuery(hqlquery);
+//         employeeQuery.setParameter("departmentName",department);
+//         List<Employee>employees = employeeQuery.list();
+//         session.close();
+//         return employees;
+//     }
+
 
 
 }

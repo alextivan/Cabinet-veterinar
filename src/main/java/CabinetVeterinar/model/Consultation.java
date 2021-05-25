@@ -3,7 +3,9 @@ package CabinetVeterinar.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -30,6 +32,12 @@ public class Consultation {
     @ManyToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
+
+    @ManyToMany
+    @JoinTable(name = "consultation_treatments",
+            joinColumns = {@JoinColumn(name = "consultation_id")},
+            inverseJoinColumns = {@JoinColumn(name = "treatment_id")})
+    private Set<Treatment> treatments = new HashSet<>();
 
 
     public Consultation(Date date, double weight, float temperature, Integer consultationPrice) {

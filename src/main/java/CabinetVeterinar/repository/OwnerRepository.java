@@ -1,6 +1,7 @@
 package CabinetVeterinar.repository;
 
 
+import CabinetVeterinar.model.Doctor;
 import CabinetVeterinar.model.Owner;
 import CabinetVeterinar.model.Person;
 import CabinetVeterinar.utils.SessionManager;
@@ -16,8 +17,20 @@ public class OwnerRepository {
         personGenericRepository.save(person);
         owner.setPerson(person);
         ownerGenericRepository.save(owner);
+    }
 
+    public Owner findById(Owner owner, Integer id) {
+        ownerGenericRepository.findById(owner, id);
+        return owner;
 
+    }
+
+    public void deleteOwner(Owner owner) {
+        ownerGenericRepository.delete(owner);
+    }
+
+    public void updateOwner(Owner owner) {
+        ownerGenericRepository.update(owner);
     }
 
 
